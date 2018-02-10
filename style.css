@@ -1,5 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Berkshire+Swash');
-@import url(https://fonts.googleapis.com/css?family=Princess+Sofia);
+@import url(https://fonts.googleapis.com/css?family=Handlee|Slabo+27px" rel="stylesheet);
 
 body {
     background-color: rgba(63,155,249,0.5);
@@ -9,9 +8,9 @@ body {
     height: auto;
     margin: 0;
     padding: 0;
-    color: white
-    font-family: "Princess Sofia", "Helvetica Neue", Helvetica, Arial, sans-serif;
-    font-family: 'Poiret One', cursive;
+    color: white;
+	font-size: 130%;
+	font-family: 'Slabo 27px', serif;
 
 }
 
@@ -27,11 +26,10 @@ body {
   }
 h1{
   border-style: solid;
-  border-color:  #ff4daf;
-  font-family: 'Berkshire Swash', cursive;
-  font-weight: bold;
+  font-family: 'Handlee', cursive;
   font-size: 35px;
-     color: white;
+  color: white;
+  text-align: center;
 }
 
 h3 { 
