@@ -1,0 +1,46 @@
+<script type="text/javascript">
+  (function() {
+    var po = document.createElement('script');
+    po.type = 'text/javascript'; po.async = true;
+    po.src = 'https://plus.google.com/js/client:plusone.js';
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(po, s);
+  })();
+ </script>
+
+ <div class="container">
+
+      <form class="form-signin" role="form">
+            <div id="status"></div>
+        <h2 class="form-signin-heading">User Registration</h2>
+        
+        <label for="inputFname" class="sr-only">First Name</label>
+            <input type="text" id="inputFullname" class="form-control" placeholder="First Name" required autofocus>
+            
+        <label for="inputEmail" class="sr-only">Email address</label>
+        <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required >
+        
+        <label for="inputPassword" class="sr-only">Password</label>
+        <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
+        
+        <div class="row"> 
+            <div class="col-md-6">
+                <button class="btn btn-sm btn-primary btn-block" type="submit">Sign Up</button>
+            </div>
+            <div class="col-md-6">
+                <button class="g-signin " 
+                    data-scope="https://www.googleapis.com/auth/plus.login https://www.googleapis.com/auth/userinfo.email"
+                    data-requestvisibleactions="http://schemas.google.com/AddActivity"
+                    data-clientId="1049178870057-usbfluijl3qtq3nijmucnsksr9gvkag4.apps.googleusercontent.com"
+                    data-accesstype="offline"
+                    data-callback="mycoddeSignIn"
+                    data-theme="dark"
+                    data-cookiepolicy="single_host_origin">
+                </button>
+            </div>
+        </div>
+         
+
+      </form>
+
+    </div> <!-- /container -->

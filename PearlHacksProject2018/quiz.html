@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Initial Quiz</title>
+	<html class="sign-bg">
+	<link rel="stylesheet" type="text/css" href="style.css"/>
+	
+	<script type="text/javascript">
+    function goToNewPage()
+    {
+        var url = document.getElementById('list').value;
+        if(url != 'none') {
+            window.location = url;
+        }
+    }
+</script>
+</head>
+
+<body>
+<ul id="menu-bar">
+ <li class="active"><a href="index.html">Home</a></li>
+ <li><a href="thisweek.html">This Week for You</a>
+  <ul>
+   <li><a href="thisweek.html">Calendar</a></li>
+   <li><a href="productsuggestions.html">Suggested Products</a></li>
+  </ul>
+ <li><a href="about.html">About</a></li>
+</ul>
+	<li>
+
+ <select name="list" id="list" accesskey="target">
+ <option value="none">Select Skin Type</option>
+  <option value="Dry.html">Dry skin</option>
+  <option value="Oily.html">Oily Skin</option>
+  <option value="Combo.html">Combo Skin</option>
+<select>
+<input type=button value="Select" onclick="goToNewPage()" />
+
+</html>

@@ -1,0 +1,78 @@
+<html>
+
+
+<head>
+<html class="sign-bg">
+<link rel="stylesheet" type="text/css" href="style.css"/>
+
+  
+  <meta name="google-signin-scope" content="profile email">
+  <meta name="google-signin-client_id" content="191600659640-m1dq8bskb5pj64g8vg3u3aitbpe4le5f.apps.googleusercontent.com">
+  <script src="https://apis.google.com/js/platform.js" async defer></script>
+  <script src="https://apis.google.com/js/platform.js?onload=init" async defer></script>
+  <title> TipToday Sign In </title>
+</head>
+<body>
+  	<ul id="menu-bar">
+ <li class="active"><a href="index.html">Home</a></li>
+ <li><a href="thisweek.html">This Week for You</a>
+  <ul>
+   <li><a href="thisweek.html">Calendar</a></li>
+   <li><a href="productsuggestions.html">Suggested Products</a></li>
+  </ul>
+ <li><a href="about.html">About</a></li>
+</ul>
+  <div id="my-signin2"></div>
+  <script>
+    function onSuccess(googleUser) {
+      console.log('Logged in as: ' + googleUser.getBasicProfile().getName());
+      var profile = googleUser.getBasicProfile();
+      console.log('Id: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
+      console.log(profile.getName() + ' is logged in');
+      console.log('The email of ' + profile.getName() + ' is ' + profile.getEmail()); // This is null if the 'email' scope is not present.
+      // document.writeln('Logged in as: ' + googleUser.getBasicProfile().getName());
+      var username = profile.getName();
+      document.getElementById("userName").innerHTML = 'Hello ' + username.toString() + ' you have successfully logged in!';
+    }
+    function onFailure(error) {
+      console.log(error);
+    }
+    function renderButton() {
+      gapi.signin2.render('my-signin2', {
+        'scope': 'profile email',
+        'width': 240,
+        'height': 50,
+        'longtitle': true,
+        'theme': 'dark',
+        'onsuccess': onSuccess,
+        'onfailure': onFailure
+      });
+    }
+  </script>
+  <script src="https://apis.google.com/js/platform.js?onload=renderButton" async defer></script>
+  <script>
+    function onSignIn(googleUser) {
+    var profile = googleUser.getBasicProfile();
+    document.write('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
+    document.write('Name: ' + profile.getName());
+    document.write('Image URL: ' + profile.getImageUrl());
+    document.write('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
+  }
+  </script>
+
+  <div id="onSignIn"></div>
+  <p id="userName">Login Please</p>
+  <p> Please take our brief <a href = "quiz.html"><u>questionnaire</u></a> so that we can personalize your suggestions! </p>
+
+  <script src="https://apis.google.com/js/platform.js?onload=renderButton" async defer></script>
+  <a href="#" onclick="signOut();">Sign out</a>
+  <script>
+    function signOut() {
+    var auth2 = gapi.auth2.getAuthInstance();
+    auth2.signOut().then(function () {
+      console.log('User signed out.');
+    });
+    }
+  </script>
+</body>
+</html>
